@@ -1,3 +1,5 @@
+// Data from: http://www.sagespeculation.com/2017/08/01/star-wars-the-clone-wars-episode-opening-quotes/
+
 const data = `
 01×01 – Ambush:  Great leaders inspire greatness in others.
 
@@ -229,9 +231,9 @@ const data = `
 
 06×07 – Crisis at the Heart: Deceit is the weapon of greed.
 
-06×08 – The Disappeared Pt. 1: Without darkness there cannot be light.
+06×08 – The Disappeared Part 1: Without darkness there cannot be light.
 
-06×09 – The Disappeared Pt. 2: Wisdom is born in fools as well as wise men.
+06×09 – The Disappeared Part 2: Wisdom is born in fools as well as wise men.
 
 06×10 – The Lost One: What is lost is often found.
 
@@ -240,8 +242,6 @@ const data = `
 06×12 – Destiny: Death is just the beginning.
 
 06×13 – Sacrifice: Facing all that you fear will free you from yourself.
-
-Author’s edit: About two years and seven months ago, I couldn’t have imagined this post, of all of them, would be the most-viewed post on the site. I don’t know where you people are coming from, but you deserve a completed list. Below are the opening quotes from Disney+’s Star Wars: The Clone Wars “Final Season.”
 
 07×01 – The Bad Batch: Embrace others for their differences, for that makes you whole.
 
@@ -259,18 +259,26 @@ Author’s edit: About two years and seven months ago, I couldn’t have imagine
 
 07×08 – Together Again: You can change who you are, but you cannot run from yourself.
 
-07×09 – Old Friends Not Forgotten: No opening quote
+07×09 – Old Friends Not Forgotten: No opening quote.
 
-07×10 – Phantom Apprentice: No opening quote
+07×10 – Phantom Apprentice: No opening quote.
 
-07×11 – Shattered: No opening quote
+07×11 – Shattered: No opening quote.
 
 07×12 – Victory and Death: No opening quote
 
 `;
 
-const splitUp = data.split(". ");
-for (let i = 0; i <= splitUp.length; i++) {
-  if (splitUp[i]) splitUp[i] = splitUp[i].trim();
-  console.log(splitUp[i].trim());
+let splitUp = data.split(".");
+for (let i = 0; i < splitUp.length; i++) {
+  if (splitUp[i]) {
+    splitUp[i] = splitUp[i].trim();
+    if (splitUp[i + 1]) {
+      if (splitUp[i + 1][0] !== "0") {
+        splitUp[i + 1] += splitUp[i];
+      }
+    }
+  }
 }
+
+console.log(splitUp);
