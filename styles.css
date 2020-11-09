@@ -12,3 +12,9 @@ h1 {
   font-weight: 300;
   text-align: center;
 }
+
+footer {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}

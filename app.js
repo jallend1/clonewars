@@ -303,9 +303,15 @@ const renderAllEpisodes = () => {
 
 const renderSingleEpisode = () => {
   const display = document.querySelector("main");
+  const footer = document.querySelector("footer");
   const listLength = Object.keys(episodes).length;
   const randomEpisode = Math.floor(Math.random() * listLength) + 1;
   display.innerHTML = `<h1>${episodes[randomEpisode].quote}.</h1>`;
+  footer.innerHTML = `
+    <div>${episodes[randomEpisode].title}</div>
+    <div>${episodes[randomEpisode].season}x${episodes[randomEpisode].episodeNumber}
+    
+    `;
 };
 
 extractEpisodes();
