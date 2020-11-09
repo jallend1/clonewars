@@ -295,7 +295,7 @@ splitUp.forEach((episode) => {
   }
 });
 
-const renderEpisodes = () => {
+const renderAllEpisodes = () => {
   const display = document.querySelector("main");
   const episodeList = Object.keys(episodes);
   console.log(episodeList);
@@ -304,5 +304,11 @@ const renderEpisodes = () => {
   });
 };
 
-console.log(episodes);
-renderEpisodes();
+const renderSingleEpisode = () => {
+  const display = document.querySelector("main");
+  const episodeList = Object.keys(episodes);
+
+  display.innerHTML = `<h1>${episodes[1].quote}.</h1>`;
+};
+
+renderSingleEpisode();
