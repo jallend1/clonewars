@@ -1,7 +1,7 @@
 // Data from: http://www.sagespeculation.com/2017/08/01/star-wars-the-clone-wars-episode-opening-quotes/
 
 const data = `
-01×01 – Ambush:  Great leaders inspire greatness in others.
+01×01 – Ambush: Great leaders inspire greatness in others.
 
 01×02 – Rising Malevolence: Belief is not a matter of choice, but of conviction.
 
@@ -270,15 +270,29 @@ const data = `
 `;
 
 let splitUp = data.split(".");
-for (let i = 0; i < splitUp.length; i++) {
-  if (splitUp[i]) {
-    splitUp[i] = splitUp[i].trim();
-    if (splitUp[i + 1]) {
-      if (splitUp[i + 1][0] !== "0") {
-        splitUp[i + 1] += splitUp[i];
-      }
-    }
-  }
-}
+let episodeCount = 0;
+const episodes = {};
 
-console.log(splitUp);
+splitUp.forEach((episode) => {
+  // Bonus spaces removed!
+  const trimmedEpisode = episode.trim();
+
+  const season = parseInt(trimmedEpisode[1]);
+  const episodeNumber = parseInt(trimmedEpisode[3] + trimmedEpisode[4]);
+
+  // Colon marks the end of the title, and colon + 2 equals start of quote
+  const colonIndex = trimmedEpisode.indexOf(":");
+  // Slice where title starts and ends
+  const title = trimmedEpisode.slice(8, colonIndex);
+
+  // Index of where quote starts;
+  const quote = trimmedEpisode.slice(colonIndex + 2);
+
+  // TODO: Couple quotes have a period. Alter the split point to incorporate that. Number.isNaN is temporary fix
+  if (!Number.isNaN(season)) {
+    episodeCount++;
+    episodes[episodeCount] = { title, season, episodeNumber, quote };
+  }
+});
+
+console.log(episodes);
