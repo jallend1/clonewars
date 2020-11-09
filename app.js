@@ -295,4 +295,14 @@ splitUp.forEach((episode) => {
   }
 });
 
+const renderEpisodes = () => {
+  const display = document.querySelector("main");
+  const episodeList = Object.keys(episodes);
+  console.log(episodeList);
+  episodeList.forEach((episode) => {
+    display.innerHTML += `<div>${episodes[episode].quote}</div>`;
+  });
+};
+
 console.log(episodes);
+renderEpisodes();
