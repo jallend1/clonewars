@@ -1,4 +1,6 @@
 // Data from: http://www.sagespeculation.com/2017/08/01/star-wars-the-clone-wars-episode-opening-quotes/
+const episodes = {};
+let episodeCount = 0;
 
 const data = `
 01×01 – Ambush: Great leaders inspire greatness in others.
@@ -266,34 +268,29 @@ const data = `
 07×11 – Shattered: No opening quote.
 
 07×12 – Victory and Death: No opening quote
-
 `;
 
-let splitUp = data.split(".");
-let episodeCount = 0;
-const episodes = {};
+const extractEpisodes = () => {
+  let splitUp = data.split(".");
+  splitUp.forEach((episode) => {
+    // Bonus spaces removed!
+    const trimmedEpisode = episode.trim();
+    const season = parseInt(trimmedEpisode[1]);
+    const episodeNumber = parseInt(trimmedEpisode[3] + trimmedEpisode[4]);
+    // Colon marks the end of the title, and colon + 2 equals start of quote
+    const colonIndex = trimmedEpisode.indexOf(":");
+    // Slice where title starts and ends
+    const title = trimmedEpisode.slice(8, colonIndex);
+    // Index of where quote starts;
+    const quote = trimmedEpisode.slice(colonIndex + 2);
 
-splitUp.forEach((episode) => {
-  // Bonus spaces removed!
-  const trimmedEpisode = episode.trim();
-
-  const season = parseInt(trimmedEpisode[1]);
-  const episodeNumber = parseInt(trimmedEpisode[3] + trimmedEpisode[4]);
-
-  // Colon marks the end of the title, and colon + 2 equals start of quote
-  const colonIndex = trimmedEpisode.indexOf(":");
-  // Slice where title starts and ends
-  const title = trimmedEpisode.slice(8, colonIndex);
-
-  // Index of where quote starts;
-  const quote = trimmedEpisode.slice(colonIndex + 2);
-
-  // TODO: Couple quotes have a period. Alter the split point to incorporate that. Number.isNaN is temporary fix
-  if (!Number.isNaN(season)) {
-    episodeCount++;
-    episodes[episodeCount] = { title, season, episodeNumber, quote };
-  }
-});
+    // TODO: Couple quotes have a period. Alter the split point to incorporate that. Number.isNaN is temporary fix
+    if (!Number.isNaN(season)) {
+      episodeCount++;
+      episodes[episodeCount] = { title, season, episodeNumber, quote };
+    }
+  });
+};
 
 const renderAllEpisodes = () => {
   const display = document.querySelector("main");
@@ -306,9 +303,10 @@ const renderAllEpisodes = () => {
 
 const renderSingleEpisode = () => {
   const display = document.querySelector("main");
-  const episodeList = Object.keys(episodes);
-
-  display.innerHTML = `<h1>${episodes[1].quote}.</h1>`;
+  const listLength = Object.keys(episodes).length;
+  const randomEpisode = Math.floor(Math.random() * listLength) + 1;
+  display.innerHTML = `<h1>${episodes[randomEpisode].quote}.</h1>`;
 };
 
+extractEpisodes();
 renderSingleEpisode();
