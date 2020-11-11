@@ -1,6 +1,7 @@
 // Data from: http://www.sagespeculation.com/2017/08/01/star-wars-the-clone-wars-episode-opening-quotes/
 const episodes = {};
 let episodeCount = 0;
+const refreshButton = document.querySelector("#refresh");
 
 const data = `
 01×01 – Ambush: Great leaders inspire greatness in others.
@@ -270,6 +271,7 @@ const data = `
 07×12 – Victory and Death: No opening quote
 `;
 
+console.log(data);
 const extractEpisodes = () => {
   let splitUp = data.split(".");
   splitUp.forEach((episode) => {
@@ -303,16 +305,16 @@ const renderAllEpisodes = () => {
 
 const renderSingleEpisode = () => {
   const display = document.querySelector("main");
-  const footer = document.querySelector("footer");
+  const episodeDiv = document.querySelector("#episode");
+  const titleDiv = document.querySelector("#title");
   const listLength = Object.keys(episodes).length;
   const randomEpisode = Math.floor(Math.random() * listLength) + 1;
   display.innerHTML = `<h1>${episodes[randomEpisode].quote}.</h1>`;
-  footer.innerHTML = `
-    <div>${episodes[randomEpisode].title}</div>
-    <div>${episodes[randomEpisode].season}x${episodes[randomEpisode].episodeNumber}
-    
-    `;
+  titleDiv.innerHTML = `<div>"${episodes[randomEpisode].title}"</div>`;
+  episodeDiv.innerHTML = `<div>Season ${episodes[randomEpisode].season} Episode ${episodes[randomEpisode].episodeNumber}`;
 };
 
 extractEpisodes();
 renderSingleEpisode();
+
+refreshButton.addEventListener("click", renderSingleEpisode);
