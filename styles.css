@@ -9,13 +9,22 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   padding: 0;
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 #logo {
   max-height: 100px;
+  position: absolute;
+  left: 45%;
 }
 
 .content {
@@ -23,7 +32,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 10em);
+  height: calc(100vh - 5em);
 }
 
 h1 {
@@ -33,7 +42,7 @@ h1 {
 }
 
 footer {
-  color: white;
+  color: #ffe81f;
   display: flex;
   justify-content: space-between;
   padding: 0 1em;
@@ -42,7 +51,7 @@ footer {
 #refresh {
   width: 30px;
   position: absolute;
-  left: 50%;
+  left: 48%;
   animation: rotation 10s infinite linear;
 }
 
@@ -53,4 +62,17 @@ footer {
   to {
     transform: rotate(359deg);
   }
+}
+
+#all {
+  color: white;
+}
+
+.header-all {
+  height: 110px;
+}
+
+.episode-quote {
+  padding: 1.25em;
+  text-align: center;
 }
