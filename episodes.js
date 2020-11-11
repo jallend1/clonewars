@@ -506,7 +506,14 @@ export const episodeArray = [
     episodeNumber: 6,
     title: "Nomad Droids",
     quote:
-      "Who’s the more foolish, the fool or the fool who follows him? 04×07 – Darkness on Umbara: The first step towards loyalty is trust",
+      "Who’s the more foolish, the fool or the fool who follows him?",
+    season: 4,
+  },
+  {
+    episodeCount: 73,
+    episodeNumber:7,
+    title: "Darkness on Umbara",
+    quote: "The first step towards loyalty is trust",
     season: 4,
   },
   {
