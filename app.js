@@ -9,12 +9,7 @@ const renderAllEpisodes = () => {
   episodeArray.forEach(episode => {
     displayArea.innerHTML += `
     <div class="episode-quote">
-      <div>
-        ${episode.season}x${episode.episodeNumber} - ${episode.title}
-      </div>
-      <div>
-        ${episode.quote}
-      </div>
+        <span>${episode.season}x${episode.episodeNumber} - ${episode.title}</span><span>${episode.quote}</span>
     </div>`
   })
 }

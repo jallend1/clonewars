@@ -81,5 +81,11 @@ footer {
   color: white;
 }
 
-nth-of-type {
+.episode-quote {
+  display: flex;
+  justify-content: center;
+}
+
+.episode-quote span {
+  padding-right: 2em;
 }
