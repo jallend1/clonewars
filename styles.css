@@ -39,9 +39,10 @@ h1 {
   color: #196e80;
   font-weight: 300;
   text-align: center;
+  font-size: 5em;
 }
 
-footer {
+.details {
   color: #ffe81f;
   display: flex;
   justify-content: space-between;
