@@ -10,10 +10,11 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
+  font-size: 0.5em;
 }
 
 a {
@@ -32,7 +33,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 5em);
+  height: calc(100vh - 6em);
 }
 
 h1 {
@@ -47,6 +48,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding: 0 1em;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
 }
 
 #refresh {
@@ -65,8 +71,8 @@ h1 {
   }
 }
 
-#all {
-  color: white;
+#all a {
+  color: #196e80;
 }
 
 .header-all {
@@ -79,7 +85,7 @@ h1 {
 }
 
 #about {
-  color: white;
+  color: #196e80;
 }
 
 .episode-quote {
@@ -89,4 +95,8 @@ h1 {
 
 .episode-quote span {
   padding-right: 2em;
+}
+
+.make-yellow {
+  color: #ffe81f;
 }
