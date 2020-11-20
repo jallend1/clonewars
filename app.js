@@ -4,12 +4,24 @@ import { episodeArray } from "./episodes.js";
 
 const refreshButton = document.querySelector("#refresh");
 
+const doubleDigitEpisode = (episodeNum) => {
+  return episodeNum > 9 ? episodeNum : `0${episodeNum}`
+}
+
 const renderAllEpisodes = () => {
   const displayArea = document.querySelector('main');
   episodeArray.forEach(episode => {
     displayArea.innerHTML += `
     <div class="episode-quote">
-        <div>${episode.season}x${episode.episodeNumber} - ${episode.title}</div><div>${episode.quote}</div>
+      <div class="details-all">  
+        <div>
+          0${episode.season}x${doubleDigitEpisode(episode.episodeNumber)}
+          </div>
+          <div class="make-yellow">${episode.title}</div>
+      </div>
+      <div class="quote-style">
+        ${episode.quote}
+      </div>
     </div>`
   })
 }
@@ -20,9 +32,8 @@ const renderSingleEpisode = () => {
   const display = document.querySelector("main");
   const details = document.querySelector('.details');
   const randomEpisode = Math.floor(Math.random() * episodeArray.length) + 1;
-  // If less than 9, adds a preceeding 0
-  const formattedEpisodeNum = episodeArray[randomEpisode].episodeNumber > 9 ? episodeArray[randomEpisode].episodeNumber : `0${episodeArray[randomEpisode].episodeNumber}`;
-
+  // Calls function to give all episodes double digit length
+  const formattedEpisodeNum = doubleDigitEpisode(episodeArray[randomEpisode].episodeNumber);
   display.innerHTML = `<h1>${episodeArray[randomEpisode].quote}.</h1>`;
   details.innerHTML = `-- <span>${episodeArray[randomEpisode].title} (0${episodeArray[randomEpisode].season} x ${formattedEpisodeNum})`;
 };

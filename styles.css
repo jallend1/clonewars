@@ -8,30 +8,22 @@ body {
   background-color: black;
 }
 
-/* header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0;
-  text-align: center;
-  height: 200px;
-} */
-
 a {
   text-decoration: none;
-  color: white;
+  color: #196e80;
+  font-size: 0.75em;
 }
 
 .header-center {
   display: flex;
   flex-direction: column;
-  /* height: 200px; */
-  margin: auto;
   text-align: center;
 }
 
 #logo {
   max-width: 200px;
   margin: auto;
+  padding-bottom: 1.25em;
 }
 
 .content {
@@ -39,7 +31,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh * 0.8);
+  min-height: calc(100vh - 200px);
 }
 
 h1 {
@@ -57,8 +49,13 @@ h2 {
 .details {
   color: #ffe81f;
   display: flex;
-  justify-content: space-between;
   padding: 0 1em;
+}
+
+.details-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 nav {
@@ -70,6 +67,7 @@ nav {
   width: 30px;
   position: absolute;
   left: 48%;
+  bottom: 10px;
   animation: rotation 10s infinite linear;
 }
 
@@ -83,19 +81,15 @@ nav {
 }
 
 #all-quotes {
-  color: white;
+  color: #eee;
   max-width: 600px;
   margin: 5em auto;
 }
 
-#all a {
-  color: #196e80;
-}
-
 .episode-quote {
   display: flex;
-  padding: 1.25em 0 0 0;
-  justify-content: flex-start;
+  padding-bottom: 1.25em;
+  text-align: center;
 }
 
 .episode-quote div {
@@ -110,17 +104,13 @@ nav {
   font-size: 0.5em;
 }
 
-.episode-quote {
-  display: flex;
-  justify-content: center;
-}
-
-.episode-quote span {
-  padding-right: 2em;
-}
-
 .make-yellow {
   color: #ffe81f;
+}
+
+.quote-style {
+  color: #196e80;
+  font-size: 1.25em;
 }
 
 #about {
