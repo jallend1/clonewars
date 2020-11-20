@@ -11,10 +11,10 @@ body {
 header {
   display: flex;
   justify-content: flex-end;
-  margin: 0 auto;
   padding: 0;
   text-align: center;
   font-size: 0.5em;
+  height: 200px;
 }
 
 a {
@@ -27,6 +27,7 @@ a {
   left: 45%;
   display: flex;
   flex-direction: column;
+  height: 200px;
 }
 
 #logo {
@@ -39,6 +40,7 @@ a {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 6em);
+  margin-top: 0;
 }
 
 h1 {
@@ -90,9 +92,9 @@ nav {
   color: #196e80;
 }
 
-.header-all {
+/* .header-all {
   height: 110px;
-}
+} */
 
 .episode-quote {
   display: flex;
@@ -119,4 +121,8 @@ nav {
 
 .make-yellow {
   color: #ffe81f;
+}
+
+#about {
+  color: #eee;
 }
