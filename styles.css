@@ -4,18 +4,17 @@ html {
 
 body {
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: black;
 }
 
-header {
+/* header {
   display: flex;
   justify-content: flex-end;
   padding: 0;
   text-align: center;
-  font-size: 0.5em;
   height: 200px;
-}
+} */
 
 a {
   text-decoration: none;
@@ -23,8 +22,8 @@ a {
 }
 
 .header-center {
-  position: absolute;
-  left: 45%;
+  /* position: absolute;
+    left: 45%; */
   display: flex;
   flex-direction: column;
   height: 200px;
@@ -32,6 +31,8 @@ a {
 
 #logo {
   max-width: 200px;
+  position: absolute;
+  left: 45%;
 }
 
 .content {
@@ -108,6 +109,10 @@ nav {
 
 .about {
   color: #196e80;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 0.5em;
 }
 
 .episode-quote {
