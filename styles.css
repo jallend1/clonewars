@@ -115,6 +115,10 @@ nav {
 
 #about {
   color: #eee;
+  max-width: 80%;
+  margin: auto;
+  padding-top: 2em;
+  text-align: center;
 }
 
 footer p {
@@ -126,4 +130,15 @@ footer p {
 footer p a {
   font-size: 0.75rem;
   color: #ffe81f;
+}
+
+#social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #196e80;
+}
+
+#social div img {
+  max-width: 200px;
 }
