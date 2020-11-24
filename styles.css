@@ -116,3 +116,14 @@ nav {
 #about {
   color: #eee;
 }
+
+footer p {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #eee;
+}
+
+footer p a {
+  font-size: 0.75rem;
+  color: #ffe81f;
+}
